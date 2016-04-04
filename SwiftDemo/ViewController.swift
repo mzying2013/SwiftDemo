@@ -70,8 +70,48 @@ class ViewController: UIViewController {
         print("The message is \(http200Status.description)")
         
         
+        //控制语句
+        let appType = "iOS"
+        switch appType {
+        case "IOS":
+            print("iOS 开发")
+        case "Android":
+            print("Android 开发")
+        case "WindowsPhone":
+            print("windows phone 开发")
+        default:
+            print("未知开发者")
+        }
         
+        let myArray = [12,23,31,99,89,43]
+        var maxValue : Int = 0
+        var minValue : Int = 0
+        var averageValue : Double
+        let myArrayCount = myArray.count
+        var totalValue = 0
         
+        for s in myArray{
+            totalValue += s
+            print("item is \(s)")
+            
+            if maxValue == 0 || maxValue < s {
+                maxValue = s
+            }
+            
+            if minValue == 0 || minValue > s{
+                minValue = s
+            }
+        }
+        print("max value is \(maxValue), min value is \(minValue)")
+        
+        averageValue = Double(totalValue/myArrayCount)
+        print("total value is \(totalValue) averager value is \(averageValue)")
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear animated \(animated)")
     }
 
     override func didReceiveMemoryWarning() {
