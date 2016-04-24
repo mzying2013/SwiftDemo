@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -106,12 +107,31 @@ class ViewController: UIViewController {
         
         averageValue = Double(totalValue/myArrayCount)
         print("total value is \(totalValue) averager value is \(averageValue)")
+        
+        
+        print("结果是：\(testFunction("哈利波特"))")
+        
+        let tagInfoOfPersonal = testTagFunction("liumin", age: "15", sex: "man", address: "ShenZhen")
+        print("我的个人信息：\n\(tagInfoOfPersonal)")
+        
+        
+        let (r1,r2,r3,r4) = testMultipleReturnValueFunction();
+        let infoOfPersonal = "姓名：" + r1 + "\n年龄：" + r2 + "\n性别：" + r3 + "\n地址：" + r4
+        print("我的个人信息：\n\(infoOfPersonal)")
+        
+        
+        let result = testFunctionInFunction(18)
+        print("函数嵌套结果是：\(result)")
+        
+        let arr = [10,20,30,40,50,60]
+        let result2 =  filterNumberFunction(arr, functionPoint: lessThenThirty)
+        print("函数指针结果是：\(result2)")
     }
     
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        print("view will appear animated \(animated)")
+        print("\n\nview will appear animated \(animated)")
     }
 
     override func didReceiveMemoryWarning() {
